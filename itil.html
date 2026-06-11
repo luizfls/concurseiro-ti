@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jogo de Quiz para treinamento das 34 práticas do ITIL 4">
+    <title>ITIL 4 Master - Treinamento de Práticas</title>
+    <link rel="stylesheet" href="style2.css">
+    <script src="app2.js" defer></script>
+</head>
+<body>
+
+    <main class="quiz-container">
+        <section id="quiz-screen">
+            <h1>Master ITIL 4</h1>
+            <p class="subtitle">Aqui você aprende se divertindo!</p>
+            
+            <div class="progress" id="progress" aria-live="polite">Questão 1 de 34</div>
+            
+            <div class="question-box">
+                <span class="label-text">A qual grupo pertence a prática:</span>
+                <h2 class="practice-name" id="practice-text">Carregando...</h2>
+            </div>
+
+            <button class="restart-lnk" onclick="startNewGame()" aria-label="Reiniciar o jogo">Reiniciar Jogo</button>
+            
+            <div class="options-container" id="options-container">
+                <button class="option-btn" onclick="checkAnswer(0)">Gerenciamento geral</button>
+                <button class="option-btn" onclick="checkAnswer(1)">Gerenciamento de serviços</button>
+                <button class="option-btn" onclick="checkAnswer(2)">Gerenciamento técnico</button>
+            </div>
+            
+            <button id="next-btn" class="next-btn" disabled>Próxima pergunta</button>
+        </section>
+
+        <section id="result-screen" class="hidden">
+            <h1>Treinamento concluído!</h1>
+            <div class="score-container">
+                <p>Seu resultado final:</p>
+                <div class="score-num" id="final-score">Você acertou 0/34 (0%)</div>
+                <p id="score-message">Processando resultado...</p>
+            </div>
+
+            <div class="review-section">
+                <h3 class="review-title">Revisão do Simulado (Gabarito)</h3>
+                <div id="review-list"></div>
+            </div>
+
+            <button onclick="startNewGame()" class="next-btn">Jogar novamente</button>
+        </section>
+    </main>
+
+</body>
+</html>
